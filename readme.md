@@ -1,6 +1,6 @@
 # About
 
-Source code for the following article for implicit and explicit conversions (C#)
+Source code for the following [article](https://dev.to/karenpayneoregon/c-user-defined-explicit-and-implicit-conversion-operators-3ipd) for implicit and explicit conversions (C#)
 
 ## References
 
