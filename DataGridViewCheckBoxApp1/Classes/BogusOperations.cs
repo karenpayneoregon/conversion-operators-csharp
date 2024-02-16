@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using Bogus;
 using DataGridViewCheckBoxApp1.Models;
-
+using static Bogus.Randomizer;
 namespace DataGridViewCheckBoxApp1.Classes;
 
 public class BogusOperations 
@@ -25,6 +25,7 @@ public class BogusOperations
 
     public static List<ProductContainer> Products1(int productCount = 50)
     {
+        Seed = new Random(338);
         int identifier = 1;
         Faker<ProductContainer> fake = new Faker<ProductContainer>()
             .CustomInstantiator(f => new ProductContainer(identifier++))
