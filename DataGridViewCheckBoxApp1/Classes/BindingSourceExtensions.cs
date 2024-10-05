@@ -30,4 +30,14 @@ public static class BindingSourceExtensions
     {
         if (sender != null) sender.Process = !sender.Process;
     }
+
+    /// <summary>
+    /// Determines whether the <see cref="ProductContainer.Process"/> property of the specified <paramref name="sender"/> is checked.
+    /// </summary>
+    /// <param name="sender">The <see cref="ProductContainer"/> instance whose <see cref="ProductContainer.Process"/> property is to be checked.</param>
+    /// <returns><c>true</c> if the <see cref="ProductContainer.Process"/> property is checked; otherwise, <c>false</c>.</returns>
+    public static bool IsChecked(this ProductContainer? sender)
+    {
+        return sender!.Process;
+    }
 }
