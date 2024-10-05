@@ -30,11 +30,11 @@ partial class Form2
     {
         dataGridView1 = new DataGridView();
         panel1 = new Panel();
+        DirectionCheckBox = new CheckBox();
         CheckAllButton = new Button();
         ExitButton = new Button();
         ToggleCurrentButton = new Button();
         GetAllCheckedButton = new Button();
-        DirectionCheckBox = new CheckBox();
         ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
         panel1.SuspendLayout();
         SuspendLayout();
@@ -62,6 +62,16 @@ partial class Form2
         panel1.Name = "panel1";
         panel1.Size = new Size(800, 73);
         panel1.TabIndex = 3;
+        // 
+        // DirectionCheckBox
+        // 
+        DirectionCheckBox.AutoSize = true;
+        DirectionCheckBox.Location = new Point(426, 24);
+        DirectionCheckBox.Name = "DirectionCheckBox";
+        DirectionCheckBox.Size = new Size(135, 24);
+        DirectionCheckBox.TabIndex = 5;
+        DirectionCheckBox.Text = "Check/un-check";
+        DirectionCheckBox.UseVisualStyleBackColor = true;
         // 
         // CheckAllButton
         // 
@@ -102,16 +112,6 @@ partial class Form2
         GetAllCheckedButton.UseVisualStyleBackColor = true;
         GetAllCheckedButton.Click += GetAllCheckedButton_Click;
         // 
-        // DirectionCheckBox
-        // 
-        DirectionCheckBox.AutoSize = true;
-        DirectionCheckBox.Location = new Point(426, 24);
-        DirectionCheckBox.Name = "DirectionCheckBox";
-        DirectionCheckBox.Size = new Size(135, 24);
-        DirectionCheckBox.TabIndex = 5;
-        DirectionCheckBox.Text = "Check/un-check";
-        DirectionCheckBox.UseVisualStyleBackColor = true;
-        // 
         // Form2
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
@@ -121,7 +121,7 @@ partial class Form2
         Controls.Add(panel1);
         Name = "Form2";
         StartPosition = FormStartPosition.CenterScreen;
-        Text = "Form2";
+        Text = "DataGridView CheckBox sample";
         Load += Form2_Load;
         ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
         panel1.ResumeLayout(false);
