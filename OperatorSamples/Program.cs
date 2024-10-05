@@ -7,8 +7,8 @@ internal partial class Program
 {
     static void Main(string[] args)
     {
-
-        FilePathExample();
+        ProductsExample();
+        //FilePathExample();
         Console.ReadLine();
     }
 
@@ -73,5 +73,7 @@ internal partial class Program
         list2.ForEach(x => Console.WriteLine($"{x.ProductId,-3}{x.ProductName,-10}"));
         Console.WriteLine();
         list3.ForEach(x => Console.WriteLine($"{x.ProductId,-3}{x.ProductName,-10}"));
+
+        Demo.Run();
     }
 }

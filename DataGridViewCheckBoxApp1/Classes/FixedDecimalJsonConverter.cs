@@ -6,6 +6,8 @@ namespace DataGridViewCheckBoxApp1.Classes;
 
 #pragma warning disable CS8618
 // Author https://colinmackay.scot/tag/system-text-json/
+
+
 public class FixedDecimalJsonConverter : JsonConverter<decimal>
 {
     public override decimal Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
