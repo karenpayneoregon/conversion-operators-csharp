@@ -29,11 +29,14 @@ public partial class Form2 : Form
         dataGridView1.Columns["UnitsInStock"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
     }
 
+    /// <summary>
+    /// Toggles the check state of the currently selected <see cref="ProductContainer"/> in the binding list.
+    /// </summary>
     private void ToggleCurrentButton_Click(object sender, EventArgs e)
     {
         ProductContainer? current = _bindingList[_bindingSource.Position];
-        if (current == null) return;
-        current.Process = !current.Process;
+        current?.ToggleCheck();
+
     }
 
     /// <summary>
