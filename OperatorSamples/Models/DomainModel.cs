@@ -21,8 +21,6 @@ public class Dto
         };
 }
 
-
-
 public static class Demo
 {
     public static void Run()

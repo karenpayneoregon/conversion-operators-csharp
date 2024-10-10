@@ -11,7 +11,7 @@ internal class GlobbingOperations
     {
 
         Matcher matcher = new();
-        matcher.AddIncludePatterns(new[] { "**/*.csproj" });
+        matcher.AddIncludePatterns(["**/*.csproj"]);
 
         return Task.Run(() =>
         {
