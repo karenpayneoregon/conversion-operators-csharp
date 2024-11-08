@@ -2,6 +2,7 @@
 using DataGridViewCheckBoxApp1.Classes;
 using DataGridViewCheckBoxApp1.Models;
 using System.Text.Json;
+using System;
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
@@ -13,6 +14,13 @@ public partial class Form2 : Form
     public Form2()
     {
         InitializeComponent();
+        var list = BogusOperations.Products(10_050);
+        
+
+        for (int index = 0; index < list.Count; index++)
+        {
+            var page = list.Page(index, 1000).ToList();
+        }
     }
 
     private void Form2_Load(object sender, EventArgs e)
@@ -53,7 +61,8 @@ public partial class Form2 : Form
         else if (e.ListChangedType == ListChangedType.ItemAdded)
         {
             // handle add new row e.g. FluidValidation 
-        }else if (e.ListChangedType == ListChangedType.ItemDeleted)
+        }
+        else if (e.ListChangedType == ListChangedType.ItemDeleted)
         {
             // If handling this make sure to also handle the DataGridView event
         }
@@ -77,7 +86,7 @@ public partial class Form2 : Form
     private void GetAllCheckedButton_Click(object sender, EventArgs e)
     {
         List<ProductContainer> products = _bindingList.Where(pc => pc.Process).ToList();
-        
+
         // explicit
         //List<ProductItem> results = products.Select(pc => (ProductItem)pc).ToList();
 
@@ -85,7 +94,7 @@ public partial class Form2 : Form
         List<ProductItem> results = products
             .Select<Product, ProductItem>(container => container).ToList();
 
-        
+
         if (results.Any())
         {
             // process checked
@@ -109,6 +118,24 @@ public partial class Form2 : Form
         foreach (var container in _bindingList)
         {
             container.Process = DirectionCheckBox.Checked;
+        }
+    }
+
+    private void DatabaseButton_Click(object sender, EventArgs e)
+    {
+        List<ProductContainer> products = _bindingList.Where(pc => pc.Process).ToList();
+        List<ProductItem> results = products
+            .Select<Product, ProductItem>(container => container).ToList();
+
+
+        if (results.Any())
+        {
+            DataOperations.Update(results);
+
+        }
+        else
+        {
+            // nothing checked
         }
     }
 }

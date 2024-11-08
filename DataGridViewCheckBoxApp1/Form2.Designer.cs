@@ -35,6 +35,7 @@ partial class Form2
         ExitButton = new Button();
         ToggleCurrentButton = new Button();
         GetAllCheckedButton = new Button();
+        DatabaseButton = new Button();
         ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
         panel1.SuspendLayout();
         SuspendLayout();
@@ -47,11 +48,12 @@ partial class Form2
         dataGridView1.Location = new Point(0, 0);
         dataGridView1.Name = "dataGridView1";
         dataGridView1.RowHeadersWidth = 51;
-        dataGridView1.Size = new Size(800, 377);
+        dataGridView1.Size = new Size(962, 377);
         dataGridView1.TabIndex = 2;
         // 
         // panel1
         // 
+        panel1.Controls.Add(DatabaseButton);
         panel1.Controls.Add(DirectionCheckBox);
         panel1.Controls.Add(CheckAllButton);
         panel1.Controls.Add(ExitButton);
@@ -60,7 +62,7 @@ partial class Form2
         panel1.Dock = DockStyle.Bottom;
         panel1.Location = new Point(0, 377);
         panel1.Name = "panel1";
-        panel1.Size = new Size(800, 73);
+        panel1.Size = new Size(962, 73);
         panel1.TabIndex = 3;
         // 
         // DirectionCheckBox
@@ -85,7 +87,7 @@ partial class Form2
         // 
         // ExitButton
         // 
-        ExitButton.Location = new Point(656, 21);
+        ExitButton.Location = new Point(827, 19);
         ExitButton.Name = "ExitButton";
         ExitButton.Size = new Size(132, 29);
         ExitButton.TabIndex = 2;
@@ -112,11 +114,21 @@ partial class Form2
         GetAllCheckedButton.UseVisualStyleBackColor = true;
         GetAllCheckedButton.Click += GetAllCheckedButton_Click;
         // 
+        // DatabaseButton
+        // 
+        DatabaseButton.Location = new Point(602, 19);
+        DatabaseButton.Name = "DatabaseButton";
+        DatabaseButton.Size = new Size(132, 29);
+        DatabaseButton.TabIndex = 6;
+        DatabaseButton.Text = "To database";
+        DatabaseButton.UseVisualStyleBackColor = true;
+        DatabaseButton.Click += DatabaseButton_Click;
+        // 
         // Form2
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(800, 450);
+        ClientSize = new Size(962, 450);
         Controls.Add(dataGridView1);
         Controls.Add(panel1);
         Name = "Form2";
@@ -138,4 +150,5 @@ partial class Form2
     private Button GetAllCheckedButton;
     private Button CheckAllButton;
     private CheckBox DirectionCheckBox;
+    private Button DatabaseButton;
 }

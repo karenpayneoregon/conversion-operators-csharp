@@ -4,7 +4,7 @@ using DataGridViewCheckBoxApp1.Models;
 using FastMember;
 
 namespace DataGridViewCheckBoxApp1.Classes;
-internal static class Extensions
+internal static partial class Extensions
 {
     /// <summary>
     /// Convert a list to a DataTable

@@ -1,15 +1,27 @@
 ﻿
 using OperatorSamples.Classes;
 using OperatorSamples.Models;
+// ReSharper disable AssignNullToNotNullAttribute
 
 namespace OperatorSamples;
 internal partial class Program
 {
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
-        ProductsExample();
+        //ProductsExample();
         //FilePathExample();
+
+        GlobbingOperations.TraverseSolutionMatch += GlobbingOperations_TraverseSolutionMatch;
+        GlobbingOperations.TraverseSolutionDone += count 
+            => Console.WriteLine($"Total solution files: {count}");
+
+        await GlobbingOperations.GetSolutionFilesAsync("C:\\OED\\DotnetLand\\VS2022");
         Console.ReadLine();
+    }
+
+    private static void GlobbingOperations_TraverseSolutionMatch(FileMatchItem sender)
+    {
+        Console.WriteLine(sender);
     }
 
     private static void FilePathExample()
